@@ -3,15 +3,15 @@ import java.util.*;
 class Solve {
     List<List<String>> res;
 
-    public static void main(String[] args) {
-        List<List<String>> sols = new Solve().solveNQueens(8);
-        for (List<String> list : sols) {
-            for (String sol : list)
-                System.out.println(sol);
-            System.out.println();
-        }
-        System.out.println(sols.size());
-    }
+//    public static void main(String[] args) {
+//        List<List<String>> sols = new Solve().solveNQueens(8);
+//        for (List<String> list : sols) {
+//            for (String sol : list)
+//                System.out.println(sol);
+//            System.out.println();
+//        }
+//        System.out.println(sols.size());
+//    }
 
     private static void waitForThreads(List<Thread> threads) throws InterruptedException {
         for (Thread thread : threads)

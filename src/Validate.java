@@ -1,25 +1,26 @@
 import java.util.*;
 
 public class Validate {
-    private static boolean res = true;
-    private static List<String> matrix;
+    public static boolean res = true;
+    public static List<StringBuilder> matrix;
     private static Set<Integer> vertical;
     private static Set<Integer> horizontal;
     private static Set<Integer> posDiagonal;
     private static Set<Integer> negDiagonal;
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        matrix = new ArrayList<>();
-        in.nextLine();
-        for (int i = 0; i < n; i++)
-            matrix.add(in.nextLine());
-        new Validate().validateNQueens(n);
-        System.out.println(res);
-    }
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        int n = in.nextInt();
+//        matrix = new ArrayList<>();
+//        in.nextLine();
+//        for (int i = 0; i < n; i++)
+//            matrix.add(in.nextLine());
+//        new Validate().validateNQueens(n);
+//        System.out.println(res);
+//    }
 
     public void validateNQueens(int n) {
+        res = true;
         vertical = Collections.synchronizedSet(new HashSet<>());
         horizontal = Collections.synchronizedSet(new HashSet<>());
         posDiagonal = Collections.synchronizedSet(new HashSet<>());
@@ -71,7 +72,7 @@ public class Validate {
             try {
                 isValid(n, row);
             } catch (Exception e) {
-                System.out.println("Exception is caught");
+                System.out.println(Arrays.toString(e.getStackTrace()));
             }
         }
     }
